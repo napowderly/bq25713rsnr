@@ -1,2 +1,67 @@
-module Bq25713rsnr:
-    signal gnd
+component _BQ25713RSNR:
+    # component BQ25713RSNR
+    footprint = "QFN-32_L4.0-W4.0-P0.40-TL-EP2.8"
+    lcsc_id = "C2878935"
+    mpn = "C2878935"
+    # pins
+    signal VBUS ~ pin 1
+    signal ACN ~ pin 2
+    signal ACP ~ pin 3
+    signal CHRG_OK ~ pin 4
+    signal OTG_VAP ~ pin 5
+    signal ILIM_HIZ ~ pin 6
+    signal VDDA ~ pin 7
+    signal IADPT ~ pin 8
+    signal IBAT ~ pin 9
+    signal PSYS ~ pin 10
+    signal PROCHOT_ ~ pin 11
+    signal SDA ~ pin 12
+    signal SCL ~ pin 13
+    signal CMPIN ~ pin 14
+    signal CMPOUT ~ pin 15
+    signal COMP1 ~ pin 16
+    signal COMP2 ~ pin 17
+    signal CELL_BATPRESZ ~ pin 18
+    signal SRN ~ pin 19
+    signal SRP ~ pin 20
+    signal BATDRV_ ~ pin 21
+    signal VSYS ~ pin 22
+    signal SW2 ~ pin 23
+    signal HIDRV2 ~ pin 24
+    signal BTST2 ~ pin 25
+    signal LODRV2 ~ pin 26
+    signal PGND ~ pin 27
+    signal REGN ~ pin 28
+    signal LODRV1 ~ pin 29
+    signal BTST1 ~ pin 30
+    signal HIDRV1 ~ pin 31
+    signal SW1 ~ pin 32
+    signal EP ~ pin 33
+
+module BQ25713:
+    ic = new _BQ25713RSNR
+    #3.5V to 24V input voltage range
+    power_in = new Power
+    # Output to system voltage
+    power_vsys = new Power
+    # Output to battery voltage
+    power_batt = new Power
+    i2c = new I2C
+
+    input_shunt = new Resistor
+
+    input_fet = new NFET
+
+    sw1_fet = new NFET
+
+    sw2_fet = new NFET
+
+    output_fet = new PFET
+
+    battery_fet = new PFET
+
+    inductor = new Inductor
+
+
+#TODO: find suitable mosfets
+#TODO: find suitable inductors

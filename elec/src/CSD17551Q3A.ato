@@ -1,0 +1,16 @@
+component CSD17551Q3A:
+    # component CSD17551Q3A
+    footprint = "VSONP-8_L3.2-W3.0-P0.65-LS3.3-BL"
+    lcsc_id = "C2876535"
+    mpn = "C2876535"
+    # pins
+    signal S ~ pin 1
+    S ~ pin 2
+    S ~ pin 3
+    signal G ~ pin 4
+    signal D ~ pin 5
+    D ~ pin 6
+    D ~ pin 7
+    D ~ pin 8
+    D ~ pin 9
+
